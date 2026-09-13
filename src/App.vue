@@ -4,7 +4,7 @@ import Bilingual from './Bilingual.vue'
 import { biography } from './bilingual'
 const menuOpen = ref(false)
 const selected = ref(null)
-const profile = { name: '潘永澔', role: 'Developer & Student', intro: '資訊與財金背景的研究生，專注探索 Web3、區塊鏈與 AI Agent，透過專題與黑客松累積實作經驗。', email: 'howard0427666@gmail.com', phone: '+886 958701491', github: 'https://github.com/howboi', linkedin: 'https://www.linkedin.com/in/%E6%B0%B8%E6%BE%94-%E6%BD%98-a6847b3b4/' }
+const profile = { name: '潘永澔', role: 'Developer & Student', intro: '資訊與財金背景的研究生，專注探索 Web3、區塊鏈與 AI Agent，透過專題與黑客松累積實作經驗。', email: 'howard0427666@gmail.com', github: 'https://github.com/howboi', linkedin: 'https://www.linkedin.com/in/%E6%B0%B8%E6%BE%94-%E6%BD%98-a6847b3b4/' }
 const projects = [
   { title: '台股基本面估價與互動式 K 線分析。', name: 'ValuAI', cover: ['Valu', 'AI'], type: '金融資料應用', tags: ['Vue 3', 'FastAPI'], color: 'lavender', number: '01', url: 'https://github.com/howboi/ValuAI', description: '結合基本面估價與技術面分析的台股儀表板，支援上市、上櫃股票代碼與中文名稱搜尋。以 DCF、P/E 模型整合合理價，搭配安全邊際、支撐壓力位與互動式 K 線圖，整理研究所需的資訊。', details: ['Vue 3、Tailwind CSS 與 Lightweight Charts 呈現分析介面。', 'FastAPI 搭配 yfinance、Pandas 與 NumPy 處理資料與估價計算。'], note: '研究與作品展示用途，不構成投資建議。' },
   { title: '畢業專題・負責前端開發。', name: 'ProfiqAI', cover: ['Profiq', 'AI'], type: '畢業專題', tags: ['Frontend Development', 'Vue 3'], color: 'green', number: '02', url: 'https://github.com/Ynn622/ProfiqAI', description: '我在 ProfiqAI 專案中負責前端開發。', details: [] },
@@ -58,7 +58,6 @@ const nav = [{ id: 'about', label: '關於我' }, { id: 'work', label: '精選�
 
       <section id="contact" class="page-wrap pb-16"><div class="contact-panel"><p class="eyebrow">03 / GET IN TOUCH</p><div class="mt-6 flex flex-wrap items-end justify-between gap-8"><div><h2><Bilingual text="下一個好點子，或許從一句嗨開始。" /></h2><p class="mt-5 text-stone-600"><Bilingual text="聊聊合作、交流想法，或只是打聲招呼。" /></p></div><a v-if="profile.email" :href="`mailto:${profile.email}`" class="button-primary"><Bilingual text="寄信給我" /> ↗</a></div><div class="mt-10 grid gap-4 border-t border-black/10 pt-7 sm:grid-cols-2">
   <a :href="`mailto:${profile.email}`" class="contact-link"><span class="eyebrow text-stone-500">EMAIL</span><span class="break-all">{{ profile.email }}</span></a>
-  <a href="tel:+886958701491" class="contact-link"><span class="eyebrow text-stone-500">PHONE</span><span>{{ profile.phone }}</span></a>
   <a :href="profile.github" target="_blank" rel="noopener noreferrer" class="contact-link"><span class="eyebrow text-stone-500">GITHUB</span><span>howboi ↗</span></a>
   <a :href="profile.linkedin" target="_blank" rel="noopener noreferrer" class="contact-link"><span class="eyebrow text-stone-500">LINKEDIN</span><span><Bilingual text="潘永澔" /></span></a>
 </div></div></section>
