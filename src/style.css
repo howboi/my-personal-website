@@ -42,3 +42,7 @@ h2 { font-size: clamp(28px, 3vw, 38px); line-height: 1.5; font-weight: 650; lett
 .contact-link { display: flex; flex-direction: column; gap: 9px; padding: 16px; border: 1px solid #d5dbcc; border-radius: 6px; min-width: 0; }
 .contact-link:hover { background: #e0e8d4; }
 .project-wordmark { font-size: clamp(36px, 4.1vw, 54px); overflow-wrap: anywhere; }
+.portrait-card { position: relative; width: calc(100% - 16px); max-width: 425px; justify-self: center; margin: 0; background: #263d33; border-radius: 8px; padding: 10px; box-shadow: 12px 16px 0 #e7e9de; }
+.portrait-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 55% 58%; border-radius: 3px; }
+.portrait-caption { padding: 20px 14px 12px; color: #f4f4e9; }
+@media (max-width: 767px) { .portrait-card { max-width: 360px; } }

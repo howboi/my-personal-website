@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 const menuOpen = ref(false)
 const selected = ref(null)
-const profile = { name: '潘永澔', role: 'Developer & Student', intro: '喜歡探索新事物，也喜歡把複雜的問題，變成簡單、直覺的體驗。這裡收藏了我的想法、練習，以及一步步完成的作品。', email: 'howard0427666@gmail.com', phone: '+886 958701491', github: 'https://github.com/howboi', linkedin: 'https://www.linkedin.com/in/%E6%B0%B8%E6%BE%94-%E6%BD%98-a6847b3b4/' }
+const profile = { name: '潘永澔', role: 'Developer & Student', intro: '以資訊與財金為起點，探索程式、金融市場與區塊鏈的交會。熱衷學習，也樂於透過實作與合作，讓想法一步步成真。', email: 'howard0427666@gmail.com', phone: '+886 958701491', github: 'https://github.com/howboi', linkedin: 'https://www.linkedin.com/in/%E6%B0%B8%E6%BE%94-%E6%BD%98-a6847b3b4/' }
 const projects = [
   { title: '台股基本面估價與互動式 K 線分析。', name: 'ValuAI', cover: ['Valu', 'AI'], type: '金融資料應用', tags: ['Vue 3', 'FastAPI'], color: 'lavender', number: '01', url: 'https://github.com/howboi/ValuAI', description: '結合基本面估價與技術面分析的台股儀表板，支援上市、上櫃股票代碼與中文名稱搜尋。以 DCF、P/E 模型整合合理價，搭配安全邊際、支撐壓力位與互動式 K 線圖，整理研究所需的資訊。', details: ['Vue 3、Tailwind CSS 與 Lightweight Charts 呈現分析介面。', 'FastAPI 搭配 yfinance、Pandas 與 NumPy 處理資料與估價計算。'], note: '研究與作品展示用途，不構成投資建議。' },
   { title: '以 Vue 3 與 Vite 建置的畢業專題前端。', name: '畢業專題前端', cover: ['Graduation', 'Project'], type: '前端專案', tags: ['Vue 3', 'Vite'], color: 'green', number: '02', url: 'https://github.com/howboi/graduation-project-frontend', description: '畢業專題的前端程式庫，使用 Vue 3 與 Vite 建立開發環境，採用單檔元件與 script setup 語法。專案 README 同時提供 Figma 設計稿連結。', details: ['以 Vue 單檔元件組織前端介面。', '可至 GitHub 查看原始碼與 README 中的設計參考。'] },
@@ -31,18 +31,23 @@ const nav = [{ id: 'about', label: '關於我' }, { id: 'work', label: '精選�
           <p class="mt-4 max-w-lg leading-8 text-stone-600">{{ profile.intro }}</p>
           <div class="mt-9 flex flex-wrap items-center gap-6"><a href="#work" class="button-primary">看看我的作品 <span aria-hidden="true">↗</span></a><a href="#about" class="text-sm underline decoration-stone-400 underline-offset-8">多認識我一點</a></div>
         </div>
-        <div class="identity-card relative">
-          <div class="flex justify-between text-xs tracking-widest"><span>A LITTLE ABOUT ME</span><span>✳</span></div>
-          <div class="initials" aria-label="姓名縮寫預留位置">YP<span>®</span></div>
-          <div class="card-rule"></div>
-          <div class="flex items-end justify-between gap-4"><div><p class="text-2xl font-semibold">PAN, YUNG-HAO</p><p class="mt-2 text-sm text-white/65">Always curious. Always creating.</p></div><span class="text-3xl" aria-hidden="true">↗</span></div>
-          <div class="name-sticker">用自己的步調<br><strong>做喜歡的事。</strong></div>
-        </div>
+        <figure class="portrait-card">
+          <img src="/pan-yung-hao.jpg" alt="潘永澔坐在窗邊的生活照" width="1108" height="1477" fetchpriority="high" class="portrait-photo" />
+          <figcaption class="portrait-caption"><p class="text-xl font-semibold">PAN, YUNG-HAO</p><p class="mt-2 text-sm text-white/75">Developer & Student</p></figcaption>
+        </figure>
       </section>
 
       <section id="about" class="page-wrap section-block grid gap-10 md:grid-cols-[.7fr_1.3fr]">
         <div><p class="eyebrow">01 / ABOUT ME</p><h2 class="mt-4">不只是一段<br>自我介紹。</h2></div>
-        <div><p class="about-lead">我相信，好作品來自細心觀察，<br class="hidden md:block">也來自願意動手的那一步。</p><p class="mt-5 max-w-2xl leading-8 text-stone-600">從一個小小的靈感開始，透過學習、實作與調整，慢慢找到自己的答案。我在意細節，也享受與不同的人交流，讓想法有更多可能。</p><div class="mt-8 flex flex-wrap gap-3"><span v-for="skill in ['Vue.js', 'Tailwind CSS', '介面設計', '持續學習']" :key="skill" class="skill-tag">{{ skill }}</span></div><p class="mt-6 text-xs text-stone-500">以上為自我介紹與技能示範，待填入你的故事。</p></div>
+        <div>
+          <p class="about-lead">在金融與科技之間，<br class="hidden md:block">保持好奇，持續實作。</p>
+          <div class="mt-5 max-w-2xl space-y-5 leading-8 text-stone-600">
+            <p>我畢業於國立臺北科技大學資訊與財金管理系，目前持續於該系所就讀。個性負責、重視效率，熱衷學習新知，也樂於與人合作。</p>
+            <p>高中時受父親影響，開始接觸證券交易；進入大學後自行操作股票市場，持續研究個股並關注國際新聞。隨著系上推動區塊鏈相關領域，我也對加密貨幣產生濃厚興趣，投入研究與投資，探索金融與科技的更多可能。</p>
+            <p>程式方面，我具備 Python 與 Solidity 智慧合約語言的基礎，並在課程與專題中累積實際應用經驗。大學期間多次籌辦校內活動，培養了溝通協調與組織能力，也學會在團隊合作中兼顧效率與責任。</p>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-3"><span v-for="skill in ['Python', 'Solidity', '金融市場研究', '區塊鏈', '團隊協作', '活動籌辦']" :key="skill" class="skill-tag">{{ skill }}</span></div>
+        </div>
       </section>
 
       <section id="work" class="page-wrap section-block">
@@ -64,5 +69,6 @@ const nav = [{ id: 'about', label: '關於我' }, { id: 'work', label: '精選�
     <dialog ref="detail" class="project-dialog" @click="e => { if (e.target === $refs.detail) $refs.detail.close() }" @close="selected = null"><template v-if="selected"><div class="flex items-center justify-between gap-6"><p class="eyebrow">PROJECT {{ selected.number }} / {{ selected.type }}</p><button @click="$refs.detail.close()" class="rounded-full border border-black/20 px-4 py-2" autofocus aria-label="關閉作品介紹">關閉 ×</button></div><h2 class="mt-8">{{ selected.name }}</h2><p class="mt-6 leading-8 text-stone-600">{{ selected.description }}</p><ul class="mt-5 list-disc space-y-2 pl-5 leading-7 text-stone-600"><li v-for="detail in selected.details" :key="detail">{{ detail }}</li></ul><p v-if="selected.note" class="mt-4 text-sm text-stone-500">{{ selected.note }}</p><a :href="selected.url" target="_blank" rel="noopener noreferrer" class="button-primary mt-7">在 GitHub 查看專案 ↗</a><div class="mt-8 flex flex-wrap gap-3"><span v-for="tag in selected.tags" :key="tag" class="skill-tag">{{ tag }}</span></div></template></dialog>
   </div>
 </template>
+
 
 
