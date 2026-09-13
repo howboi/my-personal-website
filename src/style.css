@@ -39,3 +39,6 @@ h2 { font-size: clamp(28px, 3vw, 38px); line-height: 1.5; font-weight: 650; lett
 .project-dialog::backdrop { background: #18221bcc; }
 @media(max-width: 767px) { .page-wrap { width: calc(100% - 40px); } .hero { padding-block: 48px 65px; gap: 50px; } .identity-card { max-width: 340px; padding: 24px; width: calc(100% - 24px); } .initials { font-size: 135px; } .name-sticker { right: -12px; top: 112px; font-size: 14px; padding: 14px 18px; } .section-block { padding-block: 42px 50px; } .about-lead { font-size: 20px; } .contact-panel { padding: 28px 24px; } .project-wordmark { font-size: 56px; } }
 @media(prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { transition: none !important; } }
+.contact-link { display: flex; flex-direction: column; gap: 9px; padding: 16px; border: 1px solid #d5dbcc; border-radius: 6px; min-width: 0; }
+.contact-link:hover { background: #e0e8d4; }
+.project-wordmark { font-size: clamp(36px, 4.1vw, 54px); overflow-wrap: anywhere; }

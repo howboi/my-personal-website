@@ -2,10 +2,11 @@
 import { ref } from 'vue'
 const menuOpen = ref(false)
 const selected = ref(null)
-const profile = { name: '潘永澔', role: 'Developer & Student', intro: '喜歡探索新事物，也喜歡把複雜的問題，變成簡單、直覺的體驗。這裡收藏了我的想法、練習，以及一步步完成的作品。', email: '' }
+const profile = { name: '潘永澔', role: 'Developer & Student', intro: '喜歡探索新事物，也喜歡把複雜的問題，變成簡單、直覺的體驗。這裡收藏了我的想法、練習，以及一步步完成的作品。', email: 'howard0427666@gmail.com', phone: '+886 958701491', github: 'https://github.com/howboi', linkedin: 'https://www.linkedin.com/in/%E6%B0%B8%E6%BE%94-%E6%BD%98-a6847b3b4/' }
 const projects = [
-  { title: '把日常，整理成喜歡的樣子。', name: 'Daily Space', type: '個人專案', tags: ['Vue', '介面設計'], color: 'lavender', number: '01', description: '作品示範：一個整理日常靈感與待辦事項的空間。未來可在這裡介紹你的專案背景、負責項目與成果。' },
-  { title: '讓每一次探索，都有新的發現。', name: 'Wander Notes', type: '概念設計', tags: ['網站設計', '使用者體驗'], color: 'green', number: '02', description: '作品示範：記錄旅行與生活觀察的網站。未來可補上實際作品圖片、設計過程，以及專案連結。' }
+  { title: '台股基本面估價與互動式 K 線分析。', name: 'ValuAI', cover: ['Valu', 'AI'], type: '金融資料應用', tags: ['Vue 3', 'FastAPI'], color: 'lavender', number: '01', url: 'https://github.com/howboi/ValuAI', description: '結合基本面估價與技術面分析的台股儀表板，支援上市、上櫃股票代碼與中文名稱搜尋。以 DCF、P/E 模型整合合理價，搭配安全邊際、支撐壓力位與互動式 K 線圖，整理研究所需的資訊。', details: ['Vue 3、Tailwind CSS 與 Lightweight Charts 呈現分析介面。', 'FastAPI 搭配 yfinance、Pandas 與 NumPy 處理資料與估價計算。'], note: '研究與作品展示用途，不構成投資建議。' },
+  { title: '以 Vue 3 與 Vite 建置的畢業專題前端。', name: '畢業專題前端', cover: ['Graduation', 'Project'], type: '前端專案', tags: ['Vue 3', 'Vite'], color: 'green', number: '02', url: 'https://github.com/howboi/graduation-project-frontend', description: '畢業專題的前端程式庫，使用 Vue 3 與 Vite 建立開發環境，採用單檔元件與 script setup 語法。專案 README 同時提供 Figma 設計稿連結。', details: ['以 Vue 單檔元件組織前端介面。', '可至 GitHub 查看原始碼與 README 中的設計參考。'] },
+  { title: 'Solidity 智慧合約與 ERC-20 實作練習。', name: 'SolidityProjects', cover: ['Solidity', 'Projects'], type: '智慧合約練習', tags: ['Solidity', 'Hardhat'], color: 'lavender', number: '03', url: 'https://github.com/howboi/SolidityProjects', description: '以 Solidity 與 Hardhat 為基礎的智慧合約練習專案。程式庫收錄 ERC20.sol、IERC20.sol 與 Lock.sol 等合約檔案，以及 Hardhat 設定，呈現區塊鏈開發的學習與實作。', details: ['收錄 ERC-20 合約與介面實作檔案。', '使用 Hardhat 作為合約開發工具。'] }
 ]
 const nav = [{ id: 'about', label: '關於我' }, { id: 'work', label: '精選作品' }, { id: 'contact', label: '聯絡我' }]
 </script>
@@ -45,17 +46,23 @@ const nav = [{ id: 'about', label: '關於我' }, { id: 'work', label: '精選�
       </section>
 
       <section id="work" class="page-wrap section-block">
-        <div class="mb-10 flex flex-wrap items-end justify-between gap-5"><div><p class="eyebrow">02 / SELECTED WORK</p><h2 class="mt-4">一些想法，一些實踐。</h2></div><span class="text-sm text-stone-500">精選作品 / 示範內容</span></div>
+        <div class="mb-10 flex flex-wrap items-end justify-between gap-5"><div><p class="eyebrow">02 / SELECTED WORK</p><h2 class="mt-4">一些想法，一些實踐。</h2></div><span class="text-sm text-stone-500">公開專案 / GitHub</span></div>
         <div class="grid gap-8 md:grid-cols-2"><button v-for="project in projects" :key="project.number" class="project-card group text-left" @click="selected = project; $nextTick(() => $refs.detail.showModal())">
-          <div class="project-cover" :class="project.color"><div class="flex justify-between text-xs tracking-widest"><span>{{ project.type }}</span><span>PROJECT {{ project.number }}</span></div><p class="project-wordmark">{{ project.name.split(' ')[0] }}<br><span>{{ project.name.split(' ')[1] }}.</span></p><div class="flex items-center justify-between text-sm"><span>{{ project.tags.join(' / ') }}</span><span class="project-arrow" aria-hidden="true">↗</span></div></div>
+          <div class="project-cover" :class="project.color"><div class="flex justify-between text-xs tracking-widest"><span>{{ project.type }}</span><span>PROJECT {{ project.number }}</span></div><p class="project-wordmark">{{ project.cover[0] }}<br><span>{{ project.cover[1] }}.</span></p><div class="flex items-center justify-between text-sm"><span>{{ project.tags.join(' / ') }}</span><span class="project-arrow" aria-hidden="true">↗</span></div></div>
           <div class="flex items-start justify-between gap-3 pt-5"><div><h3 class="text-xl font-semibold">{{ project.name }}</h3><p class="mt-2 text-sm text-stone-600">{{ project.title }}</p></div><span class="pt-1 text-xs text-stone-500">{{ project.number }}</span></div>
         </button></div>
       </section>
 
-      <section id="contact" class="page-wrap pb-16"><div class="contact-panel"><p class="eyebrow">03 / GET IN TOUCH</p><div class="mt-6 flex flex-wrap items-end justify-between gap-8"><div><h2>下一個好點子，<br>或許從一句嗨開始。</h2><p class="mt-5 text-stone-600">聊聊合作、交流想法，或只是打聲招呼。</p></div><a v-if="profile.email" :href="`mailto:${profile.email}`" class="button-primary">寄信給我 ↗</a><span v-else class="rounded-full border border-black/20 px-6 py-4 text-sm">聯絡信箱待補上</span></div></div></section>
+      <section id="contact" class="page-wrap pb-16"><div class="contact-panel"><p class="eyebrow">03 / GET IN TOUCH</p><div class="mt-6 flex flex-wrap items-end justify-between gap-8"><div><h2>下一個好點子，<br>或許從一句嗨開始。</h2><p class="mt-5 text-stone-600">聊聊合作、交流想法，或只是打聲招呼。</p></div><a v-if="profile.email" :href="`mailto:${profile.email}`" class="button-primary">寄信給我 ↗</a><span v-else class="rounded-full border border-black/20 px-6 py-4 text-sm">聯絡信箱待補上</span></div><div class="mt-10 grid gap-4 border-t border-black/10 pt-7 sm:grid-cols-2">
+  <a :href="`mailto:${profile.email}`" class="contact-link"><span class="eyebrow text-stone-500">EMAIL</span><span class="break-all">{{ profile.email }}</span></a>
+  <a href="tel:+886958701491" class="contact-link"><span class="eyebrow text-stone-500">PHONE</span><span>{{ profile.phone }}</span></a>
+  <a :href="profile.github" target="_blank" rel="noopener noreferrer" class="contact-link"><span class="eyebrow text-stone-500">GITHUB</span><span>howboi ↗</span></a>
+  <a :href="profile.linkedin" target="_blank" rel="noopener noreferrer" class="contact-link"><span class="eyebrow text-stone-500">LINKEDIN</span><span>潘永澔 · PAN, YUNG-HAO ↗</span></a>
+</div></div></section>
     </main>
     <footer class="page-wrap flex flex-wrap justify-between gap-4 border-t border-black/10 py-7 text-xs text-stone-500"><span>© 2026 {{ profile.name }}. 個人網站初稿</span><a href="#home">回到頂端 ↑</a></footer>
-    <dialog ref="detail" class="project-dialog" @click="e => { if (e.target === $refs.detail) $refs.detail.close() }" @close="selected = null"><template v-if="selected"><div class="flex items-center justify-between gap-6"><p class="eyebrow">PROJECT {{ selected.number }} / 示範作品</p><button @click="$refs.detail.close()" class="rounded-full border border-black/20 px-4 py-2" autofocus aria-label="關閉作品介紹">關閉 ×</button></div><h2 class="mt-8">{{ selected.name }}</h2><p class="mt-6 leading-8 text-stone-600">{{ selected.description }}</p><div class="mt-8 flex gap-3"><span v-for="tag in selected.tags" :key="tag" class="skill-tag">{{ tag }}</span></div></template></dialog>
+    <dialog ref="detail" class="project-dialog" @click="e => { if (e.target === $refs.detail) $refs.detail.close() }" @close="selected = null"><template v-if="selected"><div class="flex items-center justify-between gap-6"><p class="eyebrow">PROJECT {{ selected.number }} / {{ selected.type }}</p><button @click="$refs.detail.close()" class="rounded-full border border-black/20 px-4 py-2" autofocus aria-label="關閉作品介紹">關閉 ×</button></div><h2 class="mt-8">{{ selected.name }}</h2><p class="mt-6 leading-8 text-stone-600">{{ selected.description }}</p><ul class="mt-5 list-disc space-y-2 pl-5 leading-7 text-stone-600"><li v-for="detail in selected.details" :key="detail">{{ detail }}</li></ul><p v-if="selected.note" class="mt-4 text-sm text-stone-500">{{ selected.note }}</p><a :href="selected.url" target="_blank" rel="noopener noreferrer" class="button-primary mt-7">在 GitHub 查看專案 ↗</a><div class="mt-8 flex flex-wrap gap-3"><span v-for="tag in selected.tags" :key="tag" class="skill-tag">{{ tag }}</span></div></template></dialog>
   </div>
 </template>
+
 
