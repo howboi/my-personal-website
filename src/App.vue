@@ -44,7 +44,7 @@ const nav = [{ id: 'about', label: '關於我' }, { id: 'work', label: '精選�
         <div>
           <p class="about-lead"><Bilingual text="在資訊與區塊鏈之間，持續探索與實作。" /></p>
           <div class="mt-6 max-w-2xl space-y-7 leading-8 text-stone-600"><p v-for="paragraph in biography" :key="paragraph"><Bilingual :text="paragraph" /></p></div>
-          <div class="mt-8 flex flex-wrap gap-3"><span v-for="skill in ['Python', 'Solidity', 'Web3 / DeFi', 'AI Agent', '區塊鏈黑客松', '團隊協作']" :key="skill" class="skill-tag"><Bilingual :text="skill" /></span></div>
+          <div class="mt-8 flex flex-wrap gap-3"><span v-for="skill in ['Python', 'Solidity', 'Web3 / DeFi', 'AI Agent', 'Blockchain Hackathons', 'Team Collaboration']" :key="skill" class="skill-tag whitespace-nowrap"><Bilingual :text="skill" /></span></div>
         </div>
       </section>
 
@@ -67,6 +67,7 @@ const nav = [{ id: 'about', label: '關於我' }, { id: 'work', label: '精選�
     <dialog ref="detail" class="project-dialog" @click="e => { if (e.target === $refs.detail) $refs.detail.close() }" @close="selected = null"><template v-if="selected"><div class="flex items-center justify-between gap-6"><p class="eyebrow">PROJECT {{ selected.number }} / <Bilingual :text="selected.type" /></p><button @click="$refs.detail.close()" class="rounded-full border border-black/20 px-4 py-2" autofocus aria-label="關閉作品介紹 / Close project details"><Bilingual text="關閉" /> ×</button></div><h2 class="mt-8">{{ selected.name }}</h2><p class="mt-6 leading-8 text-stone-600"><Bilingual :text="selected.description" /></p><ul v-if="selected.details.length" class="mt-5 list-disc space-y-2 pl-5 leading-7 text-stone-600"><li v-for="detail in selected.details" :key="detail"><Bilingual :text="detail" /></li></ul><p v-if="selected.note" class="mt-4 text-sm text-stone-500"><Bilingual :text="selected.note" /></p><a :href="selected.url" target="_blank" rel="noopener noreferrer" class="button-primary mt-7"><Bilingual text="在 GitHub 查看專案" /> ↗</a><div class="mt-8 flex flex-wrap gap-3"><span v-for="tag in selected.tags" :key="tag" class="skill-tag"><Bilingual :text="tag" /></span></div></template></dialog>
   </div>
 </template>
+
 
 
 
