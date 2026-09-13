@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@theme { --font-sans: 'Segoe UI', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; }
+:root { font-family: var(--font-sans); color: #20241f; background: #fafaf7; font-synthesis: none; }
+html { scroll-behavior: smooth; scroll-padding-top: 28px; }
+body { margin: 0; }
+button,a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+a,button { transition: background .2s, transform .2s, color .2s; }
+a:focus-visible,button:focus-visible { outline: 3px solid #66812d; outline-offset: 6px; }
+.page-wrap { width: min(1184px, calc(100% - 96px)); margin-inline: auto; }
+.brand { font-size: 32px; font-weight: 850; letter-spacing: -2px; }
+.nav-link { font-size: 14px; }
+.nav-link:hover { color: #5c742e; }
+.nav-note { font-size: 12px; letter-spacing: 1px; color: #73766d; border-left: 1px solid #ccc; padding-left: 32px; }
+.hero { padding-top: 88px; padding-bottom: 102px; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 1.8px; }
+h1 { font-size: clamp(44px, 5.3vw, 72px); font-weight: 750; line-height: 1.3; letter-spacing: -2px; }
+h2 { font-size: clamp(28px, 3vw, 38px); line-height: 1.5; font-weight: 650; letter-spacing: -1px; }
+.underline-mark { position: absolute; left: 0; width: 100%; height: 16px; bottom: -7px; fill: none; stroke: #a6c944; stroke-width: 7px; }
+.button-primary { display: inline-flex; gap: 35px; align-items: center; background: #242c24; color: white; padding: 17px 25px; border-radius: 999px; font-size: 14px; }
+.button-primary:hover { background: #46573a; transform: translateY(-2px); }
+.identity-card { background: #263d33; color: #f4f4e9; border-radius: 6px; padding: 30px; transform: rotate(3deg); max-width: 425px; width: 100%; justify-self: center; box-shadow: 12px 16px 0 #e7e9de; }
+.initials { font-size: clamp(100px, 13vw, 180px); font-weight: 850; line-height: 1.7; letter-spacing: -13px; color: #d4ed9c; }
+.initials span { font-size: 24px; letter-spacing: 0; vertical-align: top; display: inline-block; margin-top: 55px; margin-left: 10px; }
+.card-rule { height: 1px; background: #ffffff36; margin-bottom: 24px; }
+.name-sticker { position: absolute; right: -23px; top: 135px; transform: rotate(-11deg); background: #d5f998; color: #253129; padding: 20px 24px; font-size: 16px; line-height: 1.8; box-shadow: 0 4px 8px #0001; }
+.section-block { border-top: 1px solid #dedfd7; padding-block: 65px 80px; }
+.about-lead { font-size: 23px; line-height: 1.8; font-weight: 500; }
+.skill-tag { border: 1px solid #d4d7cd; border-radius: 999px; padding: 8px 17px; font-size: 14px; }
+.project-cover { padding: 28px; border-radius: 5px; overflow: hidden; }
+.lavender { background: #e1dff0; color: #353248; }
+.green { background: #dce6d6; color: #294333; }
+.project-wordmark { font-size: clamp(42px, 5vw, 66px); line-height: 1.1; letter-spacing: -3px; font-weight: 650; padding-block: 42px; }
+.project-wordmark span { font-family: Georgia, serif; font-style: italic; font-weight: 400; }
+.project-arrow { background: #ffffff70; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-size: 23px; }
+.project-card:hover .project-arrow { background: white; transform: rotate(45deg); }
+.contact-panel { background: #edf0e5; padding: 46px; border-radius: 6px; }
+.project-dialog { margin: auto; padding: 32px; width: min(600px, calc(100% - 32px)); border: 0; border-radius: 12px; background: #fafaf7; max-height: 85dvh; }
+.project-dialog::backdrop { background: #18221bcc; }
+@media(max-width: 767px) { .page-wrap { width: calc(100% - 40px); } .hero { padding-block: 48px 65px; gap: 50px; } .identity-card { max-width: 340px; padding: 24px; width: calc(100% - 24px); } .initials { font-size: 135px; } .name-sticker { right: -12px; top: 112px; font-size: 14px; padding: 14px 18px; } .section-block { padding-block: 42px 50px; } .about-lead { font-size: 20px; } .contact-panel { padding: 28px 24px; } .project-wordmark { font-size: 56px; } }
+@media(prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { transition: none !important; } }
