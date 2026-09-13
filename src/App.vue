@@ -42,8 +42,9 @@ const nav = [{ id: 'about', label: '關於我' }, { id: 'work', label: '精選�
         <div>
           <p class="about-lead">在金融與科技之間，<br class="hidden md:block">保持好奇，持續實作。</p>
           <div class="mt-5 max-w-2xl space-y-5 leading-8 text-stone-600">
-            <p>我畢業於國立臺北科技大學資訊與財金管理系，目前持續於該系所就讀。個性負責、重視效率，熱衷學習新知，也樂於與人合作。</p>
+            <p>我畢業於國立臺北科技大學資訊與財金管理系，目前為該系所研究生。個性負責、重視效率，熱衷學習新知，也樂於與人合作。</p>
             <p>高中時受父親影響，開始接觸證券交易；進入大學後自行操作股票市場，持續研究個股並關注國際新聞。隨著系上推動區塊鏈相關領域，我也對加密貨幣產生濃厚興趣，投入研究與投資，探索金融與科技的更多可能。</p>
+            <p>未來的研究方向將以 Web3、區塊鏈與 AI Agent 的結合為主，探究相關技術的潛在風險，尤其關注 AI Agent 支付（Agent Payment）中的交易安全問題。</p>
             <p>程式方面，我具備 Python 與 Solidity 智慧合約語言的基礎，並在課程與專題中累積實際應用經驗。大學期間多次籌辦校內活動，培養了溝通協調與組織能力，也學會在團隊合作中兼顧效率與責任。</p>
           </div>
           <div class="mt-8 flex flex-wrap gap-3"><span v-for="skill in ['Python', 'Solidity', '金融市場研究', '區塊鏈', '團隊協作', '活動籌辦']" :key="skill" class="skill-tag">{{ skill }}</span></div>
@@ -69,6 +70,7 @@ const nav = [{ id: 'about', label: '關於我' }, { id: 'work', label: '精選�
     <dialog ref="detail" class="project-dialog" @click="e => { if (e.target === $refs.detail) $refs.detail.close() }" @close="selected = null"><template v-if="selected"><div class="flex items-center justify-between gap-6"><p class="eyebrow">PROJECT {{ selected.number }} / {{ selected.type }}</p><button @click="$refs.detail.close()" class="rounded-full border border-black/20 px-4 py-2" autofocus aria-label="關閉作品介紹">關閉 ×</button></div><h2 class="mt-8">{{ selected.name }}</h2><p class="mt-6 leading-8 text-stone-600">{{ selected.description }}</p><ul v-if="selected.details.length" class="mt-5 list-disc space-y-2 pl-5 leading-7 text-stone-600"><li v-for="detail in selected.details" :key="detail">{{ detail }}</li></ul><p v-if="selected.note" class="mt-4 text-sm text-stone-500">{{ selected.note }}</p><a :href="selected.url" target="_blank" rel="noopener noreferrer" class="button-primary mt-7">在 GitHub 查看專案 ↗</a><div class="mt-8 flex flex-wrap gap-3"><span v-for="tag in selected.tags" :key="tag" class="skill-tag">{{ tag }}</span></div></template></dialog>
   </div>
 </template>
+
 
 
 
