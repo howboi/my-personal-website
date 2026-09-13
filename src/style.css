@@ -46,3 +46,11 @@ h2 { font-size: clamp(28px, 3vw, 38px); line-height: 1.5; font-weight: 650; lett
 .portrait-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 55% 58%; border-radius: 3px; }
 .portrait-caption { padding: 20px 14px 12px; color: #f4f4e9; }
 @media (max-width: 767px) { .portrait-card { max-width: 360px; } }
+
+.bilingual { display: block; }
+.translation { display: block; margin-top: .4rem; font-size: .875rem; font-weight: 400; line-height: 1.65; letter-spacing: normal; color: inherit; }
+h2 .translation, .about-lead .translation { font-size: 1rem; margin-top: .65rem; line-height: 1.6; }
+.hero-translation { display: block; margin-top: 1rem; font-size: clamp(1.5rem, 2.7vw, 2rem); font-weight: 500; line-height: 1.35; letter-spacing: -.5px; }
+.nav-link .translation, .eyebrow .translation, .skill-tag .translation { font-size: .75rem; }
+.hero { padding-top: 64px; padding-bottom: 76px; }
+.project-cover .translation { font-size: .75rem; }
